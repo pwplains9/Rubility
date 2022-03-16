@@ -2,6 +2,10 @@
 Header
 Content
 Footer
+button.btn.btn-outline-secondary(type='button' @click="i18n.locale = 'tw'") 繁體
+button.btn.btn-outline-secondary(type='button' @click="i18n.locale = 'cn'") 简体
+button.btn.btn-outline-secondary(type='button' @click="i18n.locale = 'en'") English
+button.btn.btn-outline-secondary(type='button' @click="i18n.locale = 'jp'") 日本語
 </template>
 
 <script>

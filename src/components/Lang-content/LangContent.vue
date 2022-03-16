@@ -22,7 +22,7 @@ export default {
 @import '../../css/_global.scss';
 
 .lang-content {
-	margin-top: -23px;
+	margin-top: vc(-23);
 	background: $color-header;
 	
 	&__container {
@@ -30,13 +30,13 @@ export default {
 		align-items: center;
 		justify-content: space-between;
 		margin: 0 auto;
-		padding: 72px 0;
-		max-width: 1110px;
+		padding: vc(72) 0;
+		max-width: vc(1110);
 	}
 	
 	&__item {
-		width: 64px;
-		height: 64px;
+		width: vc(64);
+		height: vc(64);
 		
 		&--USA  {
 			background: url("@/assets/icons/USA.png") center center no-repeat;

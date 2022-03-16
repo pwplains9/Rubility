@@ -22,46 +22,76 @@ export default {
 
 <style scoped lang="scss">
 @import '../../css/_global.scss';
+
 .footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	margin: 0 auto;
-	padding: 19px 0;
-	width: 1110px;
+	padding: vc(19) 0;
+	width: vc(1110);
 	
 	&__left {
-		display: flex;
-		align-items: center;
+		@include desktop {
+			display: flex;
+			align-items: center;
+		}
+		@include mobile {
+			flex-flow: column;
+		}
 	}
 	
 	&__copyright {
-		font-size: 14px;
+		font-size: vc(14);
 		font-weight: 500;
 		color: $color-gray;
 	}
-
+	
 	&__privacy {
-		margin: 0 48px 0 90px;
-		font-size: 14px;
+		font-size: vc(14);
 		font-weight: 500;
 		color: $color-gray;
+		
+		@include desktop {
+			margin: 0 vc(48) 0 vc(90);
+		}
 	}
-
+	
 	&__uses {
-		font-size: 14px;
+		font-size: vc(14);
 		font-weight: 500;
 		color: $color-gray;
 	}
-
+	
 	&__production {
-		font-size: 14px;
+		font-size: vc(14);
 		font-weight: 500;
 		color: $color-gray;
 		
 		a {
-			margin-left: 5px;
+			margin-left: vc(5);
 			color: $color-text;
+		}
+		
+		@include mobile {
+			text-align: left;
+		}
+	}
+	
+	@include desktop {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	@include mobile {
+		padding: vc(16) vc(32);
+		flex-flow: column;
+		width: 100%;
+		text-align: left;
+		
+		&__left {
+			a {
+				display: block;
+				margin: vc(17) 0;
+			}
 		}
 	}
 }

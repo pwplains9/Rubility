@@ -34,49 +34,60 @@ export default {
 
 .form {
 	position: relative;
-	z-index: 1;
+	z-index: 5;
 	margin: 0 auto;
-	width: 730px;
-	height: 264px;
-	padding: 49px;
+	width: vc(730);
+	height: vc(264);
+	padding: vc(49);
 	border-radius: 24px;
 	box-shadow: 8px 8px 24px 0 rgba(9, 13, 20, 0.06), -4px -4px 8px 0 rgba(255, 255, 255, 0.4), 0 1px 1px 0 rgba(9, 13, 20, 0.06);
 	background-image: linear-gradient(110deg, #fff, #fafbfc 52%, #f5f7fa 100%);
 	
 	&__top {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		@include desktop {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
 	}
 	
 	&__item {
 		position: relative;
-		width: 200px;
+		width: vc(200);
+		
+		@include mobile {
+			margin-bottom: vc(18);
+			width: 100%;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 	
 	&__label {
 		display: block;
-		margin-bottom: 8px;
-		padding: 0 15px;
-		font-size: 13px;
+		margin-bottom: vc(8);
+		padding: 0 vc(15);
+		font-size: vc(13);
 		font-weight: 500;
 		color: $color-theme;
 	}
 	
 	&__input {
 		border: none;
-		padding: 10px 16px 10px 12px;
+		padding: vc(10) vc(16) vc(10) vc(12);
 		background-color: rgba($color-theme, 0.02);
 		width: 100%;
-		height: 48px;
+		height: vc(48);
 		outline: none;
 		font-weight: 500;
-		font-size: 16px;
+		font-size: vc(16);
 		color: $color-theme;
 		
 		&::placeholder {
 			font-weight: 500;
-			font-size: 16px;
+			font-size: vc(16);
 			color: $color-theme;
 		}
 		
@@ -91,29 +102,29 @@ export default {
 	
 	&__money {
 		position: absolute;
-		right: 17px;
-		top: 37px;
+		right: vc(17);
+		top: vc(37);
 		display: flex;
 		align-items: center;
 		
 		&::before {
 			content: "";
 			display: block;
-			width: 20px;
-			height: 20px;
-			margin: 0 12px 0 0;
+			width: vc(20);
+			height: vc(20);
+			margin: 0 vc(12) 0 0;
 			background: url("@/assets/langs/ru.png") center center no-repeat;
 			background-size: contain;
 		}
 	}
 	
 	&__button {
-		width: 190px;
-		height: 48px;
+		width: vc(190);
+		height: vc(48);
 		border: none;
-		padding: 10px 24px;
+		padding: vc(10) vc(24);
 		border-radius: 24px;
-		font-size: 16px;
+		font-size: vc(16);
 		font-weight: 600;
 		line-height: 1.75;
 		letter-spacing: normal;
@@ -128,12 +139,25 @@ export default {
 				background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), linear-gradient(114deg, #d33f62, #9c42f5 53%, #5d2de1 100%);
 			}
 		}
+		
+		@include mobile {
+			margin-top: vc(40);
+			width: 100%;
+		}
 	}
 	
 	&__bottom {
-		display: flex;
-		justify-content: flex-end;
-		margin-top: 48px;
+		@include desktop {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: vc(48);
+		}
+	}
+	
+	@include mobile {
+		padding: vc(40);
+		width: vc(312);
+		height: auto;
 	}
 }
 

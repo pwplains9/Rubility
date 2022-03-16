@@ -9,3 +9,7 @@
     font-display: swap;
   }
 }
+
+@function vc($value) {
+  @return calc(#{$value} * var(--width-multiplier));
+}

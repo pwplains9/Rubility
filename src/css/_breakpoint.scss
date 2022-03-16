@@ -4,6 +4,13 @@
 	}
 }
 
+@mixin desktop-xl {
+	// change the values for the situation
+	@media (min-width: ($desktop-xl * 1px)) {
+		@content;
+	}
+}
+
 @mixin laptop {
 	// change the values for the situation
 	@media (min-width: ($desktop * 1px)) and (max-width: (($laptop - 1) * 1px)) {
